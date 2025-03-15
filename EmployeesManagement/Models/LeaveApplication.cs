@@ -10,13 +10,15 @@ namespace EmployeesManagement.Models
         public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
 
-        [Display(Name = "No Of Leave Days")]
+        [Display(Name = "Leave Days")]
         public int NoOfDays { get; set; }
 
         [Display(Name = "Start Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd}")]
         public DateTime StartDate {  get; set; }
 
         [Display(Name = "End Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd}")]
         public DateTime EndDate { get; set; }
 
         [Display(Name = "Leave Duration")]
@@ -34,5 +36,8 @@ namespace EmployeesManagement.Models
         [Display(Name = "Status")]
         public int StatusId { get; set; }
         public SystemCodeDetail Status { get; set; }
+
+        [Display(Name = "Approval Notes")]
+        public string? ApprovalNotes { get; set; }
     }
 }

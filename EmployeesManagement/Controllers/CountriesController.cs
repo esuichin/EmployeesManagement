@@ -62,6 +62,7 @@ namespace EmployeesManagement.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CountryId"] = new SelectList(_context.Set<Country>(), "CountryId", "Name");
             return View(country);
         }
 

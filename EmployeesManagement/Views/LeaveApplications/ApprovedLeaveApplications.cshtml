@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<EmployeesManagement.Models.LeaveApplication>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Approved Leave Applications";
 }
 
-<p>
-    <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Leave Application</a>
-</p>
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Leave Application List</h3>
+        <h3 class="card-title">Approved Leave Application List</h3>
     </div>
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
@@ -71,7 +68,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Attachment)
                         </td>
-                        <td style="background-color:green">
+                        <td style="background-color:steelblue">
                             @Html.DisplayFor(modelItem => item.Status.Description)
                         </td>
                         <td>
@@ -81,45 +78,20 @@
                                         Action
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li class="dropdown-item">
-                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa fa-pen"></i> Edit</a>
-                                        </li>
+                                        
                                         <li class="dropdown-divider"></li>
                                         <li class="dropdown-item">
                                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa fa-eye"></i> View</a>
                                         </li>
-                                        <li class="dropdown-divider"></li>
-                                        <li class="dropdown-item">
-                                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
-                                        </li>
-                                        <li class="dropdown-divider"></li>
-                                        <li class="dropdown-item">
-                                            <a asp-action="ApproveLeave" asp-route-id="@item.Id" class="btn btn-success"><i class="fa fa-check" data-toggle="modal" data-target="#modal-lg"></i> Approve</a>
-                                        </li>
-                                        <li class="dropdown-divider"></li>
-                                        <li class="dropdown-item">
-                                            <a asp-action="RejectLeave" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-x" data-toggle="modal" data-target="#modal-lg"></i> Reject</a>
-                                        </li>
+                                       
                                     </ul>
                                 </div>
                             </div>
-                        </td>
-
-                        @* <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa fa-pen"></i> Edit</a>
-                        </td>
-                        <td>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa fa-eye"></i> View</a>
-                        </td>
-                        <td>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
-                        </td>
-                        <td>
-                            <a asp-action="ApproveLeave" asp-route-id="@item.Id" class="btn btn-success"><i class="fa fa-check"></i> Approve</a>
-                        </td> *@
+                        </td>                        
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 </div>
+
